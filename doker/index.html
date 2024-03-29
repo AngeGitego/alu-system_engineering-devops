@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Management</title>
+</head>
+<body>
+  <h1>Project Management</h1>
+  <input type="text" id="taskInput" placeholder="Enter a new task">
+  <button onclick="addTask()">Add Task</button>
+  <ul id="taskList"></ul>
+
+  <script>
+    function addTask() {
+      var taskInput = document.getElementById("taskInput");
+      var taskText = taskInput.value.trim();
+      if (taskText !== "") {
+        var taskList = document.getElementById("taskList");
+        var listItem = document.createElement("li");
+        listItem.textContent = taskText;
+        taskList.appendChild(listItem);
+        taskInput.value = "";
+      }
+    }
+  </script>
+</body>
+</html>
+
